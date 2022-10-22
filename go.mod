@@ -1,4 +1,4 @@
-module jsn
+module codingdogs.com/json
 
 go 1.19
 
