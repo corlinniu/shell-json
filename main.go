@@ -18,6 +18,7 @@ func main() {
 	fileInfo, _ := os.Stdin.Stat()
 	if (fileInfo.Mode() & os.ModeNamedPipe) != os.ModeNamedPipe {
 		_, _ = os.Stderr.WriteString("元数据必须通过管道输入\n")
+		return
 	}
 	s := bufio.NewScanner(os.Stdin)
 	for s.Scan() {
