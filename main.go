@@ -10,7 +10,11 @@ import (
 )
 
 func main() {
-	var paths = os.Args[1:]
+	if len(os.Args) <= 3 {
+		_, _ = os.Stderr.WriteString("USAGE: json <SEP> <JSONPATH> ... \n")
+		return
+	}
+	var paths = os.Args[2:]
 	fileInfo, _ := os.Stdin.Stat()
 	if (fileInfo.Mode() & os.ModeNamedPipe) != os.ModeNamedPipe {
 		_, _ = os.Stderr.WriteString("元数据必须通过管道输入\n")
@@ -34,6 +38,6 @@ func main() {
 				rst = append(rst, fmt.Sprintf("%v", res))
 			}
 		}
-		fmt.Printf("%s\n", strings.Join(rst, " "))
+		fmt.Printf("%s\n", strings.Join(rst, os.Args[1]))
 	}
 }
