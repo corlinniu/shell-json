@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	if len(os.Args) <= 3 {
+	if len(os.Args) < 3 {
 		_, _ = os.Stderr.WriteString("USAGE: json <SEP> <JSONPATH> ... \n")
 		return
 	}
