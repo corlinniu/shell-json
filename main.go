@@ -28,8 +28,11 @@ func main() {
 		var rst []string
 		for _, path := range paths {
 			res, _ := jsonpath.JsonPathLookup(jsonData, path)
-			str, _ := json.Marshal(res)
-			rst = append(rst, string(str))
+			if res == nil {
+				rst = append(rst, "")
+			} else {
+				rst = append(rst, fmt.Sprintf("%v", res))
+			}
 		}
 		fmt.Printf("%s\n", strings.Join(rst, " "))
 	}
