@@ -11,11 +11,11 @@ import (
 )
 
 func main() {
-	//if len(os.Args) < 3 {
-	//	_, _ = os.Stderr.WriteString("USAGE: json <SEP> <JSONPATH> ... \n")
-	//	return
-	//}
-	//var paths = os.Args[2:]
+	if len(os.Args) != 2 {
+		fmt.Printf("Usage: cat raw.txt | json2 'update User set name = \"{name}\" where id = {id}'")
+		return
+	}
+
 	fileInfo, _ := os.Stdin.Stat()
 	if (fileInfo.Mode() & os.ModeNamedPipe) != os.ModeNamedPipe {
 		_, _ = os.Stderr.WriteString("元数据必须通过管道输入\n")
@@ -37,25 +37,8 @@ func main() {
 		for _, vr := range vars {
 			vr = vr[1 : len(vr)-1]
 			res, _ := jsonpath.JsonPathLookup(jsonData, "$."+vr)
-			fmt.Printf("res = %v\n", res)
 			rstStr = strings.ReplaceAll(rstStr, "{"+vr+"}", fmt.Sprintf("%v", res))
 		}
 		fmt.Printf(rstStr)
-
-		//var rst []string
-		//for _, path := range paths {
-		//	if path[0] != '$' {
-		//		rst = append(rst, path)
-		//		continue
-		//	}
-		//
-		//	res, _ := jsonpath.JsonPathLookup(jsonData, path)
-		//	if res == nil {
-		//		rst = append(rst, "")
-		//	} else {
-		//		rst = append(rst, fmt.Sprintf("%v", res))
-		//	}
-		//}
-		//fmt.Printf("%s\n", strings.Join(rst, os.Args[1]))
 	}
 }
