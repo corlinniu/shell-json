@@ -39,6 +39,6 @@ func main() {
 			res, _ := jsonpath.JsonPathLookup(jsonData, "$."+vr)
 			rstStr = strings.ReplaceAll(rstStr, "{"+vr+"}", fmt.Sprintf("%v", res))
 		}
-		fmt.Printf(rstStr)
+		fmt.Printf(rstStr + "\n")
 	}
 }
