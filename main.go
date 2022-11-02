@@ -32,6 +32,11 @@ func main() {
 
 		var rst []string
 		for _, path := range paths {
+			if path[0] != '$' {
+				rst = append(rst, path)
+				continue
+			}
+
 			res, _ := jsonpath.JsonPathLookup(jsonData, path)
 			if res == nil {
 				rst = append(rst, "")
