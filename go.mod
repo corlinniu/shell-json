@@ -1,4 +1,4 @@
-module codingdogs.com/json
+module codingdogs.com/shell-toolkit
 
 go 1.19
 
