@@ -35,3 +35,15 @@ cat xxxx.json | json2 "update user set name = '{name}' where id = {id}"
 update qx_user set name = 'xxxx' where id = 1;
 update qx_user set name = 'xxxx' where id = 1;
 ```
+
+# 命令介绍：csv
+## Usage
+```azure
+csv data/data.csv "ID = {ID} Name = {姓名} Age = {年龄}"
+```
+## 示例
+```azure
+> bin/csv data/data.csv "ID = {ID} Name = {姓名} Age = {年龄}"
+rst = ID = 1 Name = xxxx Age = 32
+rst = ID = 2 Name = yyyy Age = 45
+```
