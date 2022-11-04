@@ -9,7 +9,7 @@ import (
 
 func main() {
 	if len(os.Args) != 4 {
-		fmt.Printf("Usage: excel file.xlsx sheet 'age = {age}'\n")
+		fmt.Printf("Usage: excel file.xlsx sheetName 'The name is {Name}'\n")
 		return
 	}
 

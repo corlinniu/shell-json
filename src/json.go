@@ -12,7 +12,7 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Printf("Usage: cat raw.txt | json2 'update User set name = \"{name}\" where id = {id}'")
+		fmt.Printf("Usage: cat raw.txt | json2 'The name is {Name}'")
 		return
 	}
 
