@@ -10,7 +10,7 @@ import (
 
 func main() {
 	if len(os.Args) != 3 {
-		fmt.Printf("Usage: csv file-to-path.csv 'The name is {Name}.'")
+		fmt.Printf("Usage: csv file-to-path.csv 'The name is {Name}.'\n")
 		return
 	}
 

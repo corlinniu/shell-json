@@ -12,7 +12,7 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Printf("Usage: cat raw.txt | json2 'The name is {Name}'")
+		fmt.Printf("Usage: cat raw.txt | json2 'The name is {Name}'\n")
 		return
 	}
 
