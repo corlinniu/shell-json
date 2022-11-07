@@ -22,3 +22,33 @@ bin/excel data/excel.xlsx Sheet1 'Name = {Name} Age = {Age}'
 ```shell
 bin/csv data/csv.csv 'Name = {Name} Age = {Age}'
 ```
+
+### 其他好用的命令整理
+#### join
+```shell
+# 类似于SQL中的JOIN
+
+cat employee.txt
+100 Jason Smith
+200 John Doe
+300 Sanjay Gupta
+400 Ashok Sharma
+
+cat bonus.txt
+200 $500
+300 $3,000
+400 $1,250
+
+# 左连接
+join -a1 employee.txt bonus.txt
+100 Jason Smith
+200 John Doe $500
+300 Sanjay Gupta $3,000
+400 Ashok Sharma $1,250
+
+# 右连接
+join -a2 employee.txt bonus.txt
+200 John Doe $500
+300 Sanjay Gupta $3,000
+400 Ashok Sharma $1,250
+```
