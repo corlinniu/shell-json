@@ -3,8 +3,9 @@
 
 ### 编译安装
 ```shell
-1. 需要安装golang
-2. 执行编译安装命令: sh build.sh
+1. 安装golang: https://golang.google.cn/dl/
+2. 配置golang环境变量
+3. 执行编译安装命令: sh build.sh
 ```
 
 ### json
