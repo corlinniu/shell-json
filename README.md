@@ -3,7 +3,8 @@
 
 ### 编译安装
 ```shell
-sh build.sh
+1. 需要安装golang
+2. 执行编译安装命令: sh build.sh
 ```
 
 ### json
