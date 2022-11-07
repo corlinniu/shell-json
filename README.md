@@ -1,6 +1,11 @@
 ### 介绍
 在Shell中分析Json、Csv、Excel等等
 
+### 编译安装
+```shell
+sh build.sh
+```
+
 ### json
 ```shell
 echo '{"name":1, "age":2}' | bin/json 'name = {name} age = {age}'
