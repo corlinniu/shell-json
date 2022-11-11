@@ -31,7 +31,14 @@ func main() {
 	var row []string
 	for _, xpath := range os.Args[3:] {
 		node := htmlquery.FindOne(doc, xpath)
-		row = append(row, node.FirstChild.Data)
+		if node == nil || node.FirstChild == nil {
+			row = append(row, "")
+		} else {
+			s := strings.ReplaceAll(node.FirstChild.Data, "\n", "")
+			s = strings.ReplaceAll(s, "\r", "")
+			s = strings.Trim(s, " ")
+			row = append(row, s)
+		}
 	}
 
 	fmt.Printf("%s\n", strings.Join(row, sep))
