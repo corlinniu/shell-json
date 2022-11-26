@@ -5,6 +5,7 @@ go 1.19
 require (
 	github.com/360EntSecGroup-Skylar/excelize v1.4.1
 	github.com/antchfx/htmlquery v1.2.5
+	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/oliveagle/jsonpath v0.0.0-20180606110733-2e52cf6e6852
 	golang.org/x/net v0.0.0-20200421231249-e086a090c8fd
 )

@@ -22,12 +22,21 @@ func main() {
 		return
 	}
 	s := bufio.NewScanner(os.Stdin)
+	buf := make([]byte, 1024*1024*1024)
+	s.Buffer(buf, 1024*1024*1024)
 	for s.Scan() {
 		var stdIn = s.Bytes()
+		if stdIn == nil {
+			continue
+		}
 		var jsonData interface{}
 		err := json.Unmarshal(stdIn, &jsonData)
 		if err != nil {
 			_, _ = os.Stderr.WriteString("ERR: 输入数据非Json格式\n")
+			continue
+		}
+
+		if jsonData == nil {
 			continue
 		}
 
