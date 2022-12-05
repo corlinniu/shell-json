@@ -38,7 +38,7 @@ func main() {
 		for _, key := range usedKeys {
 			rawStr = strings.ReplaceAll(rawStr, "{"+key+"}", row[key])
 		}
-		fmt.Printf("rst = %s\n", rawStr)
+		fmt.Printf("%s\n", rawStr)
 	}
 }
 
